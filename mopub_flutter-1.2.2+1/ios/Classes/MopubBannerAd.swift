@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import MoPub
+import MoPubSDK
 
 class MoPubBannerAd : NSObject, FlutterPlatformView {
     
@@ -61,13 +61,13 @@ class MoPubBannerAd : NSObject, FlutterPlatformView {
     
     fileprivate func getBannerAdSize(height: NSInteger) -> CGSize {
         if height >= 280 {
-            return kMPPresetMaxAdSize280Height
+            return MOPUB_WIDE_SKYSCRAPER_SIZE
         } else if height >= 250 {
-            return kMPPresetMaxAdSize250Height
+            return MOPUB_MEDIUM_RECT_SIZE
         } else if height >= 90 {
-            return kMPPresetMaxAdSize90Height
+            return MOPUB_LEADERBOARD_SIZE
         } else if height >= 50 {
-            return kMPPresetMaxAdSize50Height
+            return MOPUB_BANNER_SIZE
         } else {
             return kMPPresetMaxAdSizeMatchFrame
         }
